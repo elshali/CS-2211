@@ -1,0 +1,25 @@
+Part 2 Answers
+
+1. Files
+
+1. Using the command "echo *" is able to display the files and directories in a folder. The '*' parameter matches all the files and directories in your directory, and the 'echo' outputs given arguments; by using '*', these arguments are the files and folders.
+2. For a prompt before removing a file, the '-i' option can be used. To forcibly remove a file, '-f' can be used. If both are specified, -f takes precedence, as it has a higher priority.
+3. The mv command can move files from directory to directory, while the rename command cannot. The rename can batch rename multiple files, while the mv command cannot. The rename command's syntax is 'rename <expression> <files>', while for mv it is 'mv <source> <directory>'.
+4. ELF stands for Executable and Linkable Format, meaning it is suitable for execution on Linux or other Unix-based systems.
+5. 'ls -l' shows the size of the file in bytes, which reports as 0 for an empty file because the actual size of the content is 0 bytes. 'du' however, stands for disk usage, and shows the amount of space on the disk the file uses, which is usually around 1kb - the minimum allocation size for a file.
+
+2. Directories
+
+1. 'mkdir -p grandparent/parent/child' will make the entire structure in one command.
+2. To make or remove a directory with spaces in it, you can use quotation marks around the name (e.g. mkdir "directory with spaces").
+3. 'mkdir -m 500 directory_name' will make a directory with r-x------ permissions.
+4. 'cd -' will change your directory to the previous working directory you were in.
+5. 'dirs +5' will display the 6th folder in the stack. To cd to it, you can do command substitution; 'cd $(dirs +5)'.
+
+3. Permissions
+
+1. To print out what modifications are being made, you can use the '-v' (verbose) option.
+2. 'chmod --reference=file1 file2'.
+3. 'stat -c "%A %U %G" filename'. -c means you are specifying a custom output, and "%A %U %G" displays the permissions, user ownership and group ownership.
+4. 'chmod 640 filename' will give rw-r----- permissions.
+5. Omitting u/g/o/a will apply the permission to all categories. User, group, and others will receive the permission.
